@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6751" systemVersion="13E28" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MoodTrackerWatchkit_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <imageView width="78" height="74" alignment="center" image="mood0" id="Tkb-7l-DHs"/>
+                        <label alignment="center" text="Current Mood" id="47u-ya-Zdw"/>
+                        <slider width="1" alignment="left" maximum="2" steps="2" id="FNd-Gb-yrE">
+                            <connections>
+                                <action selector="moodSlider:" destination="AgC-eL-Hgc" id="JRG-M2-guU"/>
+                            </connections>
+                        </slider>
+                        <group width="1" alignment="left" id="o3R-sh-aYF">
+                            <items>
+                                <label alignment="left" text="Good" id="isb-31-oET"/>
+                                <label alignment="right" text="Bad" id="vk7-JB-Uld"/>
+                            </items>
+                        </group>
+                        <separator alignment="left" id="b90-Tb-iJ5"/>
+                        <switch width="1" alignment="left" value="YES" title="Offer Advice" id="C4R-0h-iEs"/>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Record Mood" id="2WL-xF-LjH">
+                            <connections>
+                                <segue destination="G4P-69-kNW" kind="push" id="U6y-Dm-gY6"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="moodImage" destination="Tkb-7l-DHs" id="mnc-U8-C5y"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="131" y="321.25"/>
+        </scene>
+        <!--MoodInterfaceController-->
+        <scene sceneID="WNa-TM-btD">
+            <objects>
+                <controller identifier="MoodInterfaceController" id="G4P-69-kNW" customClass="MoodInterfaceController" customModule="MoodTrackerWatchkit_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="u8A-kc-hY6">
+                            <items>
+                                <imageView width="61" height="83" alignment="left" verticalAlignment="center" image="mood0" contentMode="scaleAspectFit" id="LOE-M0-VI3"/>
+                                <separator alignment="center" id="8Hb-zT-N1n"/>
+                                <label width="0.5" widthAdjustment="-4" alignment="right" verticalAlignment="center" text="Label" id="8EJ-zF-EEu"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="yWm-Ra-awH">
+                            <items>
+                                <label alignment="left" text="Your mood is good for now" numberOfLines="0" id="HAm-li-xz0"/>
+                                <separator alignment="left" id="shX-lv-jAg"/>
+                                <label alignment="left" text="Advice goes here" numberOfLines="0" id="IGF-zd-76b"/>
+                            </items>
+                            <edgeInsets key="margins" left="4" right="4" top="0.0" bottom="0.0"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="adviceLabel" destination="IGF-zd-76b" id="xtC-Q9-CjO"/>
+                        <outlet property="moodDescription" destination="HAm-li-xz0" id="7ph-03-558"/>
+                        <outlet property="moodImage" destination="LOE-M0-VI3" id="UHd-vY-iLg"/>
+                        <outlet property="moodLabel" destination="8EJ-zF-EEu" id="oX2-QK-5ny"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="377" y="303.5"/>
+        </scene>
+    </scenes>
+</document>
